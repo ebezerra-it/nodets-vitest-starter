@@ -8,7 +8,8 @@ module.exports = {
     "plugin:@stylistic/ts/all-extends",
     "plugin:promise/recommended",
     "plugin:n/recommended",
-    "plugin:import/recommended"
+    "plugin:import/recommended",
+    "plugin:vitest/recommended"
   ],
   plugins: [
     "@stylistic/js",
@@ -36,7 +37,8 @@ module.exports = {
     "@stylistic/ts/indent": ["error", 2],
     "@stylistic/js/padded-blocks": ["error", "never"],
     "@stylistic/ts/object-curly-spacing": ["error", "always"],
-    "sort-destructure-keys/sort-destructure-keys": [2, { caseSensitive: true }]
+    "sort-destructure-keys/sort-destructure-keys": [2, { caseSensitive: true }],
+    "n/no-unpublished-import": ["off"]
   },
 
   // Typescript files

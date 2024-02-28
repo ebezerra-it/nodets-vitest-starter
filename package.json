@@ -1,5 +1,5 @@
 {
-  "name": "node-ts-starter",
+  "name": "nodets-vitest-starter",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -7,10 +7,12 @@
     "dev": "docker-compose up",
     "dev-shell": "nodemon --watch \"*.ts\" --exec \"ts-node\" ./src/index.ts",
     "lint": "eslint '**/*.{js,ts}' --fix --cache",
-    "postinstall": "rm -f .husky/pre-commit && npx husky init && echo 'yarn lint' >> .husky/pre-commit",
+    "postinstall": "rm -f .husky/pre-commit && npx husky init && echo 'yarn lint && yarn test' >> .husky/pre-commit",
     "rimraf": "./node_modules/rimraf/dist/esm/bin.mjs",
     "clean": "yarn rimraf ./build && mkdir ./build",
-    "build": "yarn clean && tsc --project ./tsconfig.json"
+    "build": "yarn clean && tsc --project ./tsconfig-build.json",
+    "test": "vitest --watchAll=false",
+    "tdd": "vitest"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.6.2",
@@ -22,10 +24,12 @@
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-sort-destructure-keys": "^1.5.0",
+    "eslint-plugin-vitest": "^0.3.22",
     "husky": "^9.0.11",
     "nodemon": "^3.1.0",
     "rimraf": "^5.0.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^1.3.1"
   }
 }
