@@ -1,0 +1,3 @@
+ARG NODE_VERSION=20-alpine
+FROM node:${NODE_VERSION}
+WORKDIR /usr/app
